@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Sortings")]
+[assembly: AssemblyTitle("ArrayExtensions.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Sortings")]
+[assembly: AssemblyProduct("ArrayExtensions.Tests")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c3e922d2-56f3-4bb2-bc94-72fa6dff2574")]
+[assembly: Guid("5d003a6e-4d24-4fe2-b32e-5bc229114e3f")]
 
 // Version information for an assembly consists of the following four values:
 //

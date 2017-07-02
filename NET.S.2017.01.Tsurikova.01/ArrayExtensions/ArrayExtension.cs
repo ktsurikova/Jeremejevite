@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sortings
+namespace ArrayExtensions
 {
     /// <summary>
-    /// provides methods for sorting arrays
+    /// provides additional methods for arrays
     /// </summary>
-    public class Sorter
+    public class ArrayExtension
     {
         #region QuickSort
 
@@ -59,13 +59,6 @@ namespace Sortings
 
             Swap(ref input[index], ref input[end]);
             return index;
-        }
-
-        private static void Swap(ref int a, ref int b)
-        {
-            var temp = a;
-            a = b;
-            b = temp;
         }
 
         #endregion
@@ -138,6 +131,73 @@ namespace Sortings
                 }
             }
         }
+
+        #endregion
+
+        #region SumLeftEqualsSumRight
+
+        /// <summary>
+        /// find index of element for which the sum of the elements to the left 
+        /// of it equals to the sum of the elements on the right
+        /// </summary>
+        /// <param name="array">array to be searched</param>
+        /// <exception cref="ArgumentNullException">when array is null</exception>>
+        /// <returns>index of element if it exists, otherwise -1</returns>
+        public static int IndexOfSumLeftEqualsSumRight(int[] array)
+        {
+            if (ReferenceEquals(array, null)) throw new ArgumentNullException("array is null");
+
+            int sumL = array[0];
+            int sumR = Sum(array, 2, array.Length);
+
+            if (sumL == sumR) return 1;
+
+            for (int i = 2; i < array.Length - 1; i++)
+            {
+                sumL += array[i - 1];
+                sumR -= array[i];
+                if (sumL == sumR) return i;
+            }
+
+            return -1;
+        }
+
+        #endregion
+
+        #region SumOfElementFromStartToEnd
+
+        /// <summary>
+        /// counts the sum of array elements from start to end 
+        /// </summary>
+        /// <param name="array">array in which you need to calculate the sum of the elements</param>
+        /// <param name="start">starting index</param>
+        /// <param name="end">end index</param>
+        /// <returns>sum of elements in array</returns>
+        internal static int Sum(int[] array, int start, int end)
+        {
+            int sum = 0;
+            for (int i = start; i < end; i++)
+            {
+                sum += array[i];
+            }
+            return sum;
+        }
+
+        #endregion
+
+        #region SwapTwoElements
+
+        /// <summary>
+        /// swap two elements
+        /// </summary>
+        /// <param name="a">first element to be swaped</param>
+        /// <param name="b">second element to be swaped</param>
+        internal static void Swap(ref int a, ref int b)
+        {
+            var temp = a;
+            a = b;
+            b = temp;
+        } 
 
         #endregion
     }
