@@ -146,6 +146,7 @@ namespace ArrayExtensions
         public static int IndexOfSumLeftEqualsSumRight(int[] array)
         {
             if (ReferenceEquals(array, null)) throw new ArgumentNullException("array is null");
+            if (array.Length == 0) return -1;
 
             int sumL = array[0];
             int sumR = Sum(array, 2, array.Length);

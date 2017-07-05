@@ -72,6 +72,7 @@ namespace ArrayExtensions.Tests
                 yield return new TestCaseData(new[] { 1, 4, 6, 8 }).Returns(-1);
                 yield return new TestCaseData(new[] { 1, 2, 1 }).Returns(1);
                 yield return new TestCaseData(new[] { 1, 2 }).Returns(-1);
+                yield return new TestCaseData(new int[0]).Returns(-1);
 
             }
         }
